@@ -1,2 +1,45 @@
-# calculator.c
-Since you're asking for reusable GitHub text, here's a concise version:  A lightweight command-line calculator built in C that performs basic arithmetic operations with clean, modular code and reliable error handling. Designed to demonstrate core C programming concepts and efficient coding practices.
+#include <stdio.h>
+
+int main() {
+    float num1, num2, result;
+    char op;
+
+    printf("Simple Calculator\n");
+    printf("Enter first number: ");
+    scanf("%f", &num1);
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &op);
+
+    printf("Enter second number: ");
+    scanf("%f", &num2);
+
+    switch (op) {
+        case '+':
+            result = num1 + num2;
+            printf("Result = %.2f\n", result);
+            break;
+
+        case '-':
+            result = num1 - num2;
+            printf("Result = %.2f\n", result);
+            break;
+
+        case '*':
+            result = num1 * num2;
+            printf("Result = %.2f\n", result);
+            break;
+
+        case '/':
+            if (num2 != 0)
+                printf("Result = %.2f\n", num1 / num2);
+            else
+                printf("Error: Division by zero is not allowed.\n");
+            break;
+
+        default:
+            printf("Invalid operator.\n");
+    }
+
+    return 0;
+}
